@@ -31,6 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			      <li><a href="<%=basePath%>index.jsp">主页</a></li>
 			      <li><a href="<%=basePath%>Anomaly_showAllAnomaly.do">设备异常查询</a></li>
 			      <li><a href="<%=basePath%>autoGenerator.do">设备自动控制</a></li>
+			       <li><a href="<%=basePath%>owlexpand.do">拓展本体</a></li>
 			      <li class="dropdown">
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类
 			        <span class="caret"></span></a>
