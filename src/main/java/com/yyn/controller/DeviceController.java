@@ -66,17 +66,17 @@ public class DeviceController {
 		String table_id = info.getProperty("table_id");
 		System.out.println("当前table_id为:"+table_id);
 
-		//neo4j
-		id = ds.addDataProperty(deviceType, owner, name, description);
-		ds.addObjectProperty(map,id);
+//		//neo4j
+//		id = ds.addDataProperty(deviceType, owner, name, description);
+//		ds.addObjectProperty(map,id);
 		//mysql
-		ds.addDevice2mysql(new Device(id,deviceType,name,description,property, sensorType, unit, region,spot, company, owner,table_id));
+//		ds.addDevice2mysql(new Device(id,deviceType,name,description,property, sensorType, unit, region,spot, company, owner,table_id));
 		//tdb
 		ds.add2TDB(id,request,tdbdataset, map, deviceType);
 		
 		return "servicePage/deviceEdit.jsp";
 	}
-	
+
 	//show all device of one/all user
 	@RequestMapping("/deviceShowAll.do")
 	public String showAllDevice(HttpServletRequest request, Model model, String status) {

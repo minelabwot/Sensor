@@ -454,10 +454,11 @@ public class DeviceService {
 						"GRAPH wot:sensor_annotation {",
 						"?device rdf:type "+device_type+". ",
 						"?device wot:deviceID \""+id+"\"^^xsd:string.",
-						"?device wot:hasState wot:nomal. ",
+//						"?device wot:hasState wot:nomal. ",
 						//region
 						"?region rdf:type wot:Region. ",
-						"?device dul:hasLocation ?region. ",
+						device_type +"?a1 wot:Region. ",
+						"?device"+ "?a1"+"?region. ",
 						//spot
 						"?spot rdf:type wot:Spot. ",
 						"?device wot:hasSpot ?spot. ",
@@ -479,6 +480,7 @@ public class DeviceService {
 					"BIND(URI(CONCAT(\""+NS_WOT+"\",\""+metadata_avp.get("hasUnit")+"\")) as ?unit). ",
 					"BIND(URI(CONCAT(\""+NS_WOT+"\",\""+metadata_avp.get("isOwnedBy")+"\")) as ?owner). ",
 					"BIND(URI(CONCAT(\""+NS_WOT+"\",\""+metadata_avp.get("hasType")+"\")) as ?type) }");
+			System.out.println(update);
 			RDFReasoning.updateQuery(update, ds);
 			ds.commit();
 		} finally { 
@@ -486,7 +488,7 @@ public class DeviceService {
 		}
 		RDFReasoning.output(ds);
 	}
-	
+
 	public void addELResult(String id,Dataset ds,Device device) {
 		ds.begin(ReadWrite.WRITE);
 		try {
@@ -605,6 +607,7 @@ public class DeviceService {
 	}
 	
 }
+
 
 
 

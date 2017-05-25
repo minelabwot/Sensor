@@ -298,7 +298,7 @@ public class AnomalyService {
 		Model model = dataset.getNamedModel(NameSpaceConstants.WOT+"sensor_annotation");
 		String path = context.getRealPath("/WEB-INF/config/rules.rule");
 		List<Rule> rules = Rule.rulesFromURL(path);
-		System.out.println("mark"+rules.size());
+//		System.out.println("mark"+rules.size());
 		Reasoner reasoner = new GenericRuleReasoner(rules);  
     	reasoner.setDerivationLogging(true); 
     	InfModel inf = ModelFactory.createInfModel(reasoner, model);
