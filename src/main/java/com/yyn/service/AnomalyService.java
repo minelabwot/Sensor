@@ -1,66 +1,52 @@
 package com.yyn.service;
 
 
-import java.util.List;
-
-import javax.servlet.ServletContext;
-
 import org.apache.jena.atlas.lib.StrUtils;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.ReadWrite;
-import org.apache.jena.rdf.model.InfModel;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.reasoner.Reasoner;
-import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
-import org.apache.jena.reasoner.rulesys.Rule;
 import org.springframework.stereotype.Service;
 
-import com.yyn.util.NameSpaceConstants;
 import com.yyn.util.RDFReasoning;
 
 @Service
 public class AnomalyService {
 	private static final String NS_WOT = "http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#";
-	
+
 	public void createState(Dataset dataset) {
 		String highState = StrUtils.strjoinNL("PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#>",
-	    		"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-	    		"DELETE { GRAPH wot:sensor_annotation { ?device wot:hasState ?a.} }",
-	    		"INSERT { GRAPH wot:sensor_annotation { ?device wot:hasState wot:high. } }", 
-	    		"USING  wot:sensor_annotation ",
-	            "WHERE { ",
-	            "?device wot:hasState ?a. ",//用于delete
-	            "?device wot:hasValue ?val1. ",//以下用于insert
-	            "?device wot:hasType ?sensorType. ",
-	            "?sensorType wot:defaultObserved ?properCls. ",
-	            "?properCls wot:highThreshold ?val2. ",
-	            "FILTER(?val1 > ?val2)}");
+				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
+				"DELETE { ?device wot:hasState ?a.}",
+				"INSERT { ?device wot:hasState wot:high. }",
+				"WHERE { ",
+				"?device wot:hasState ?a. ",//用于delete
+				"?device wot:hasValue ?val1. ",//以下用于insert
+				"?device wot:hasType ?sensorType. ",
+				"?sensorType wot:defaultObserved ?properCls. ",
+				"?properCls wot:highThreshold ?val2. ",
+				"FILTER(?val1 > ?val2)}");
 		String lowState = StrUtils.strjoinNL("PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#>",
-	    		"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-	    		"DELETE { GRAPH wot:sensor_annotation { ?device wot:hasState ?a } } ",
-	    		"INSERT { GRAPH wot:sensor_annotation { ?device wot:hasState wot:low } } ", 
-	    		"USING  wot:sensor_annotation ",
-	            "WHERE { ?device wot:hasState ?a. ",//用于匹配删除所有之前的state
-	            "?device wot:hasValue ?val1.",
-	            "?device wot:hasType ?sensorType. ",
-	            "?sensorType wot:defaultObserved ?properCls. ",
-	            "?properCls wot:lowThreshold ?val2. ",
-	            "FILTER(?val1 < ?val2)}");
+				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
+				"DELETE { ?device wot:hasState ?a }",
+				"INSERT { ?device wot:hasState wot:low }",
+				"WHERE { ?device wot:hasState ?a. ",//用于匹配删除所有之前的state
+				"?device wot:hasValue ?val1.",
+				"?device wot:hasType ?sensorType. ",
+				"?sensorType wot:defaultObserved ?properCls. ",
+				"?properCls wot:lowThreshold ?val2. ",
+				"FILTER(?val1 < ?val2)}");
 		String nomalState = StrUtils.strjoinNL("PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#>",
-	    		"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-	    		"DELETE { GRAPH wot:sensor_annotation {?device wot:hasState ?a } }",
-	    		"INSERT { GRAPH wot:sensor_annotation {?device wot:hasState wot:nomal } }", 
-	    		"USING  wot:sensor_annotation ",
-	            "WHERE { ?device wot:hasState ?a. ",//用于匹配删除所有之前的state
-	            "?device wot:hasValue ?val1.",
-	            "?device wot:hasType ?sensorType. ",
-	            "?sensorType wot:defaultObserved ?properCls. ",
-	            "?properCls wot:lowThreshold ?val2. ",
-	            "?properCls wot:highThreshold ?val3. ",
-	            "FILTER(?val1 >= ?val2 && ?val1 <= ?val3)}");
+				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
+				"DELETE { ?device wot:hasState ?a }",
+				"INSERT { ?device wot:hasState wot:nomal }",
+				"WHERE { ?device wot:hasState ?a. ",//用于匹配删除所有之前的state
+				"?device wot:hasValue ?val1.",
+				"?device wot:hasType ?sensorType. ",
+				"?sensorType wot:defaultObserved ?properCls. ",
+				"?properCls wot:lowThreshold ?val2. ",
+				"?properCls wot:highThreshold ?val3. ",
+				"FILTER(?val1 >= ?val2 && ?val1 <= ?val3)}");
 		String[] strings = {highState,lowState,nomalState};
-		
+
 		for(int i=0;i<3;++i) {
 			try {
 				dataset.begin(ReadWrite.WRITE);
@@ -72,38 +58,34 @@ public class AnomalyService {
 			}
 		}
 	}
-	
-	
-	public void generateDiagModel(Dataset ds, ServletContext context) {
+
+
+	public void generateDiagModel(Dataset ds) {
 		generateFoI(ds);
 		createMandatoryProp(ds);
 		createOptional(ds);
 		createProcess(ds);
 		combineProcess(ds);
-		createCause(ds,context);
+		createCause(ds);
 	}
-	
+
 	private void generateFoI(Dataset ds) {
 		ds.begin(ReadWrite.WRITE);
-//		推理方式
+		//xxx
 		String update = StrUtils.strjoinNL(
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type ?foiCls. ",
-					"?uri wot:hasSpot ?spot. }",
-				"}",
-				"USING  wot:sensor_annotation ",
+				"INSERT { ?uri rdf:type ?foiCls. ",
+				"?uri wot:hasSpot ?spot. }",
 				"WHERE { ?spot a wot:Spot.",
 				"?foiCls rdfs:subClassOf ssn:FeatureOfInterest.",
 				"BIND(URI(CONCAT('"+NS_WOT+"',STRAFTER(str(?spot),'#'),'_',STRAFTER(str(?foiCls),'#'))) as ?uri) }");
 		RDFReasoning.updateQuery(update, ds);
 		ds.commit();
 		ds.end();
-		
+
 	}
 	/**
 	 * #1 sparql-update 创建场景FOI的通量属性 如energy airquality等
@@ -115,13 +97,9 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type ?propClass. ",
-					"?feature ssn:hasProperty ?uri.",
-					"?uri ssn:isPropertyOf ?feature. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
+				"INSERT { ?uri rdf:type ?propClass. ",
+				"?feature ssn:hasProperty ?uri.",
+				"?uri ssn:isPropertyOf ?feature. } ",
 				"WHERE { ?feature a ?featureCls.",
 				"?featureCls wot:requiresProperty ?propClass.",
 				"BIND(URI(CONCAT('http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#',STRAFTER(str(?feature),'#'),'_',STRAFTER(str(?propClass),'#'))) as ?uri) }");
@@ -129,7 +107,7 @@ public class AnomalyService {
 		dataset.commit();
 		dataset.end();
 	}
-	
+
 	/**
 	 * #2 sparql-update 创建场景FOI的传感器属性,只有存在于与FOI同一spot的传感器才会被添加进来
 	 * @param dataset
@@ -140,15 +118,11 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type ?propCls.",
-					"?feature ssn:hasProperty ?uri.",
-					"?uri ssn:isPropertyOf ?feature. ",
-					"?sensor ssn:forProperty ?uri. ",
-					"?feature wot:hasDevice ?sensor }", //构建设备
-				"} ",
-				"USING  wot:sensor_annotation ",
+				"INSERT { ?uri rdf:type ?propCls.",
+				"?feature ssn:hasProperty ?uri.",
+				"?uri ssn:isPropertyOf ?feature. ",
+				"?sensor ssn:forProperty ?uri. ",
+				"?feature wot:hasDevice ?sensor }", //构建设备
 				"WHERE {", //FOI是基于地点Spot的,所以设备必须满足出现在该Spot
 				"?sensor wot:hasType ?entityType. ",
 				"?entityType wot:defaultObserved ?propCls. ",
@@ -161,7 +135,7 @@ public class AnomalyService {
 		dataset.commit();
 		dataset.end();
 	}
-	
+
 	/**
 	 * #3 sparql-update 在同一FOI的Property和通量之间建立相关关系
 	 * @param dataset
@@ -173,14 +147,10 @@ public class AnomalyService {
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type ?proc.",
-					"?uri ssn:hasInput ?prop1.",
-					"?uri ssn:hasOutput ?prop2. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
-				"WHERE {", 
+				"INSERT { ?uri rdf:type ?proc.",
+				"?uri ssn:hasInput ?prop1.",
+				"?uri ssn:hasOutput ?prop2. } ",
+				"WHERE {",
 				"?annoProc rdfs:subPropertyOf wot:hasIntInfl. ",
 				"?annoProc wot:equalsProcess ?proc. ",
 				"?propCls1 ?annoProc ?propCls2. ",
@@ -193,7 +163,7 @@ public class AnomalyService {
 		dataset.commit();
 		dataset.end();
 	}
-	
+
 	/**
 	 * #4 sparql-update 在同一FOI下的sensor Property之间利用通量建立直接相关关系
 	 * @param dataset
@@ -205,14 +175,10 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type wot:NegativeCorrelationProcess.",
-					"?uri ssn:hasInput ?prop1.",
-					"?uri ssn:hasOutput ?prop3. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
-				"WHERE {", 
+				"INSERT { ?uri rdf:type wot:NegativeCorrelationProcess.",
+				"?uri ssn:hasInput ?prop1.",
+				"?uri ssn:hasOutput ?prop3. } ",
+				"WHERE {",
 				"?proc1 a wot:NegativeCorrelationProcess. ",
 				"?proc2 a wot:PositiveCorrelationProcess. ",
 				"?proc1 ssn:hasInput ?prop1. ",
@@ -227,14 +193,10 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type wot:PositiveCorrelationProcess.",
-					"?uri ssn:hasInput ?prop1.",
-					"?uri ssn:hasOutput ?prop3. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
-				"WHERE {", 
+				"INSERT { ?uri rdf:type wot:PositiveCorrelationProcess.",
+				"?uri ssn:hasInput ?prop1.",
+				"?uri ssn:hasOutput ?prop3. } ",
+				"WHERE {",
 				"?proc1 a wot:PositiveCorrelationProcess. ",
 				"?proc2 a wot:PositiveCorrelationProcess. ",
 				"?proc1 ssn:hasInput ?prop1. ",
@@ -249,14 +211,10 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type wot:NegativeCorrelationProcess.",
-					"?uri ssn:hasInput ?prop1.",
-					"?uri ssn:hasOutput ?prop3. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
-				"WHERE {", 
+				"INSERT { ?uri rdf:type wot:NegativeCorrelationProcess.",
+				"?uri ssn:hasInput ?prop1.",
+				"?uri ssn:hasOutput ?prop3. } ",
+				"WHERE {",
 				"?proc1 a wot:PositiveCorrelationProcess. ",
 				"?proc2 a wot:NegativeCorrelationProcess. ",
 				"?proc1 ssn:hasInput ?prop1. ",
@@ -271,14 +229,10 @@ public class AnomalyService {
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
 				"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-				"INSERT { ",
-					"GRAPH wot:sensor_annotation {",
-					"?uri rdf:type wot:PositiveCorrelationProcess.",
-					"?uri ssn:hasInput ?prop1.",
-					"?uri ssn:hasOutput ?prop3. } ",
-				"}",
-				"USING  wot:sensor_annotation ",
-				"WHERE {", 
+				"INSERT { ?uri rdf:type wot:PositiveCorrelationProcess.",
+				"?uri ssn:hasInput ?prop1.",
+				"?uri ssn:hasOutput ?prop3. } ",
+				"WHERE {",
 				"?proc1 a wot:NegativeCorrelationProcess. ",
 				"?proc2 a wot:NegativeCorrelationProcess. ",
 				"?proc1 ssn:hasInput ?prop1. ",
@@ -291,23 +245,9 @@ public class AnomalyService {
 		dataset.commit();
 		dataset.end();
 	}
-	
-	private void createCause(Dataset dataset,ServletContext context) {
+
+	private void createCause(Dataset dataset) {
 		dataset.begin(ReadWrite.WRITE);
-		//inf推理
-		Model model = dataset.getNamedModel(NameSpaceConstants.WOT+"sensor_annotation");
-		String path = context.getRealPath("/WEB-INF/config/rules.rule");
-		List<Rule> rules = Rule.rulesFromURL(path);
-//		System.out.println("mark"+rules.size());
-		Reasoner reasoner = new GenericRuleReasoner(rules);  
-    	reasoner.setDerivationLogging(true); 
-    	InfModel inf = ModelFactory.createInfModel(reasoner, model);
-    	dataset.addNamedModel(NameSpaceConstants.WOT+"sensor_annotation", inf);
-//    	StmtIterator it = inf.listStatements(null, null, (RDFNode)null);
-//    	System.out.println(it.hasNext());
-//    	while(it.hasNext())
-//    		System.out.println(it.next().asTriple());
-    	/*
 		String part1 = StrUtils.strjoinNL(
 				"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
 				"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
@@ -317,13 +257,13 @@ public class AnomalyService {
 				"?anomaly wot:hasPotCause ?uri.",
 				"?uri ssn:observationSamplingTime ?time. ",
 				"?sensor2 wot:generate ?uri. } ",
-				"WHERE {", 
+				"WHERE {",
 				"?sub ssn:observationSamplingTime ?t1. ",
 				"?anomaly a wot:Anomaly. ",
 				"?sensor1 wot:generate ?anomaly. ",
 				"?anomaly ssn:observationSamplingTime ?time. ",
 				"?sensor1 ssn:forProperty ?prop1. ");
-		
+
 		String part2 = StrUtils.strjoinNL("?proc ssn:hasOutput ?prop1. ",
 				"?proc ssn:hasInput ?prop2. ",
 				"?sensor2 ssn:forProperty ?prop2.");
@@ -360,7 +300,6 @@ public class AnomalyService {
 		RDFReasoning.updateQuery(updateHighNeg, dataset);
 		RDFReasoning.updateQuery(updateLowPos, dataset);
 		RDFReasoning.updateQuery(updateLowNeg, dataset);
-		*/
 		dataset.commit();
 		dataset.end();
 	}

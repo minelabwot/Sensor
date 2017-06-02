@@ -12,6 +12,15 @@ public class WotProperty {
     private Map<String,List<String>> map;
     private Map<String,String> conceptUriMap;
     private Map<String,Boolean> isselect;
+    private String fileName;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public Map<String, String> getConceptUriMap() {
         return conceptUriMap;

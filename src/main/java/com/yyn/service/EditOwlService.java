@@ -44,6 +44,10 @@ public class EditOwlService {
 		mDao.deleteByFile(file);
 	}
 
+	public void deleteOwlById(int id){
+		mDao.deleteById(id);
+	}
+
 	public Owldata listConcepts(HttpServletRequest request, String name){
 		OntModel model = ModelFactory.createOntologyModel();
 		File file = new File(name);

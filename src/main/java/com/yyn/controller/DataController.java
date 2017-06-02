@@ -177,7 +177,7 @@ public class DataController {
 	@RequestMapping("/sensor_data_diagnosis.do")
 	public String diagnosis(HttpServletRequest request) {
 		Dataset ds = (Dataset)request.getSession().getServletContext().getAttribute("dataset");
-		as.generateDiagModel(ds,request.getServletContext());
+		as.generateDiagModel(ds);
 		RDFReasoning.output(ds);
 		return "servicePage/deviceList.jsp";
 	}

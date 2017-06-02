@@ -33,12 +33,12 @@
 			<tr>
 				<td><c:out value="${owl.name}" /></td>
 				<td><c:out value="${owl.description}" /></td>
-				<td><a href="<%=basePath%>deleteOwl.do?owlfile=${owl.file}">删除</a></td>
-				<td><a href="<%=basePath%>editOwl.do?owlfile=${owl.file}">本体展示</a></td>
-				<td><a href="<%=basePath%>expandOwl.do?owlfile=${owl.file}">拓展</a></td>
-				<td><a href="<%=basePath%>goDeviceAddPage.do?owlfile=${owl.file}">添加设备</a></td>
-				<td><a href="<%=basePath%>myDevice.do?owlfile=${owl.file}">我的设备</a></td>
-				<td><a href="<%=basePath%>goWriteRule.do?owlfile=${owl.file}">配置规则</a> </td>
+				<td><a href="<%=basePath%>deleteOwl.do?id=${owl.id}">删除</a></td>
+				<td><a href="<%=basePath%>editOwl.do?owlfile=${owl.root}${owl.file}">本体展示</a></td>
+				<td><a href="<%=basePath%>expandOwl.do?owlfile=${owl.root}${owl.file}">拓展</a></td>
+				<td><a href="<%=basePath%>goDeviceAddPage.do?owlfile=${owl.root}${owl.file}">添加设备</a></td>
+				<td><a href="<%=basePath%>myDevice.do?owlfile=${owl.root}${owl.file}">我的设备</a></td>
+				<td><a href="<%=basePath%>goWriteRule.do?owlfile=${owl.root}${owl.file}">配置规则</a> </td>
 			</tr>
 		</c:forEach>
 	</table>

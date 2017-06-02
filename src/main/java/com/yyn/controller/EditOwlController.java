@@ -39,14 +39,14 @@ public class EditOwlController {
 	
 	@RequestMapping("deleteOwl.do")
 	public String deleteOwl(HttpServletRequest request,Model model){
-		String owlfile = request.getParameter("owlfile");
-		model.addAttribute("currentOwl",owlfile);
-		File file = new File(owlfile);
-		if (file.exists()) {
-			System.out.println(file.getAbsolutePath());
-			System.out.println(file.delete());
-		}
-		service.deleteOwlByFile(owlfile);
+		String id = request.getParameter("id");
+//		model.addAttribute("currentOwl",owlfile);
+//		File file = new File(owlfile);
+//		if (file.exists()) {
+//			System.out.println(file.getAbsolutePath());
+//			System.out.println(file.delete());
+//		}
+		service.deleteOwlById(Integer.valueOf(id));
 		return "redirect:/listowl.do";
 	}
 	

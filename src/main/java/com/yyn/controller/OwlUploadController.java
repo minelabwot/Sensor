@@ -21,9 +21,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.util.Streams;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Dataset;
+import org.apache.jena.query.DatasetFactory;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.util.FileManager;
 import org.aspectj.apache.bcel.classfile.Field;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,27 +51,40 @@ public class OwlUploadController {
 			throw new Exception("上传失败,文件不能超过20M");
 		if (file.getSize() > 0) {
 			// 文件存放路径，上传的文件放在项目的upload文件夹下
-			String savePath = "H:/sensor/upload/owl/";
+			String savePath = "H:/sensor/upload/";
 			File file2 = new File(savePath);
 			if (!file2.exists()) {
 				file2.mkdir();
 			}
+
 			String name = request.getParameter("name");
+
 			String description = request.getParameter("description");
 			String realName = file.getOriginalFilename();
+			String root = savePath+name+"/";
 			System.out.println(savePath + "_" + realName);
-			File out = new File(savePath + File.separator + realName);
+			File rootFile = new File(root);
+			if (!rootFile.exists()){
+				rootFile.mkdirs();
+			}
+			File out = new File(root + File.separator + realName);
 			file.transferTo(out);
-			
+
+			File tdbFile = new File(root+"tdb/");
+			if (!tdbFile.exists()){
+				tdbFile.mkdirs();
+			}
+			Dataset ds = TDBFactory.createDataset(tdbFile.getAbsolutePath());
 			OntModel model = ModelFactory.createOntologyModel();
 			FileManager.get().readModel(model, out.getAbsolutePath());
-			mService.createNewTable(realName.replace(".",""),model);
-			Dataset ds = (Dataset)request.getServletContext().getAttribute("dataset");
+			mService.createNewTable(realName.replace(".","").toLowerCase(),model);
+
 			ds.begin(ReadWrite.WRITE);
 			ds.addNamedModel(realName, model);
 			ds.commit();
+			ds.end();
 
-			mService.saveOwl(name,description,out.getAbsolutePath());
+			mService.saveOwl(name,description,realName,root);
 
 		}
 		return "redirect:/listowl.do";
@@ -106,7 +121,7 @@ public class OwlUploadController {
 			
 			System.out.println(out.delete());
 			
-			RDFReasoning.outputModel(model1, origin.getAbsolutePath());
+//			RDFReasoning.outputModel(model1, origin.getAbsolutePath());
 			
 			Dataset ds = (Dataset)request.getServletContext().getAttribute("dataset");
 			ds.begin(ReadWrite.WRITE);

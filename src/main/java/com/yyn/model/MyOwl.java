@@ -1,5 +1,7 @@
 package com.yyn.model;
 
+import org.apache.jena.query.Dataset;
+
 /**
  * Created by koala on 2017/5/15.
  */
@@ -8,20 +10,54 @@ public class MyOwl {
     private String name;
     private String description;
     private String file;
-//    private String basefile = "H:/sensor/RDF_Database/wot.owl";
+    private String root;
+    private String rule;
 
-    public MyOwl(int id, String name, String description, String file) {
+    public MyOwl(Integer id, String name, String description, String file, String root, String rule) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.file = file;
+        this.root = root;
+        this.rule = rule;
     }
 
-    public MyOwl(String name, String description, String file) {
+    public MyOwl(String name, String description, String file, String root) {
         this.name = name;
         this.description = description;
         this.file = file;
+        this.root = root;
     }
+
+    public String getRule() {
+        return rule;
+    }
+
+    public void setRule(String rule) {
+        this.rule = rule;
+    }
+
+    private Dataset mDataset;
+//    private String basefile = "H:/sensor/RDF_Database/wot.owl";
+
+
+    public String getRoot() {
+        return root;
+    }
+
+    public void setRoot(String root) {
+        this.root = root;
+    }
+
+    public Dataset getDataset() {
+        return mDataset;
+    }
+
+    public void setDataset(Dataset dataset) {
+        mDataset = dataset;
+    }
+
+
 
     public int getId() {
         return id;
@@ -53,5 +89,17 @@ public class MyOwl {
 
     public void setFile(String file) {
         this.file = file;
+    }
+
+    @Override
+    public String toString() {
+        return "MyOwl{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", file='" + file + '\'' +
+                ", root='" + root + '\'' +
+                ", rule='" + rule + '\'' +
+                '}';
     }
 }

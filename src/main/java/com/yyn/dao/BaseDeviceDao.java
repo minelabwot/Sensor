@@ -15,4 +15,7 @@ import java.util.Map;
 public interface BaseDeviceDao {
     @Select("select * from ${_parameter}")
     List<Map<String,String>> getDeviceByTable(String tableName);
+
+    @Select("select max(id) from ${_parameter}")
+    Integer searchLastId(String tableName);
 }

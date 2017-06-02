@@ -14,10 +14,8 @@ public class RuleService {
     @Autowired
     OwlDao mDao;
     public void saveRule(String file,String rule){
+
         mDao.saveRule(file,rule);
     }
 
-    public int searchRule(String file){
-        return mDao.searchRule(file);
-    }
 }

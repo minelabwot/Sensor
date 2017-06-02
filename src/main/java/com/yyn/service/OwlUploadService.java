@@ -39,19 +39,19 @@ public class OwlUploadService {
 
 	@Autowired
 	OwlDao mDao;
-	public void saveOwl(String name,String des,String file){
-		mDao.inserOwl(new MyOwl(name,des,file));
+	public void saveOwl(String name,String des,String fileName,String root){
+		mDao.inserOwl(new MyOwl(name,des,fileName,root));
 	}
 
 	public void createNewTable(String tablename, OntModel model){
-		OntClass ontClass = model.getOntClass("http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#WoTProperty");
+		OntClass ontClass = model.getOntClass("http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#PropertyLabel");
 
 		ExtendedIterator<OntClass> iterable = ontClass.listSubClasses();
 		List<String> concepts = new ArrayList<>();
 		StringBuilder sb = new StringBuilder("create table "+tablename+" ( `id` int(11) primary key not null auto_increment, `name` varchar(255), `description` varchar(255),");
 		while (iterable.hasNext()){
 			OntClass subclass = iterable.next();
-			if ((subclass.getSuperClass().equals(ontClass) || subclass.getSuperClass().getLocalName() == null) && subclass != null && subclass.getLocalName() != null){
+			if (subclass != null && subclass.getLocalName() != null){
 				sb.append(" `"+subclass.getLocalName().toLowerCase()+"` varchar(255),");
 			}
 		}

@@ -35,7 +35,6 @@ public class RuleController {
     public String saveRule(HttpServletRequest request){
         String file = request.getServletContext().getAttribute("currentFile").toString();
         String rule = request.getParameter("rule").toString();
-
         System.out.println(rule);
         mService.saveRule(file,rule);
         return "redirect:/listowl.do";

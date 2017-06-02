@@ -2,8 +2,11 @@ package com.yyn.service;
 
 import com.yyn.dao.BaseDeviceDao;
 import com.yyn.model.WotProperty;
+import com.yyn.util.NameSpaceConstants;
+import com.yyn.util.RDFReasoning;
 import com.yyn.util.ResolveRule;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.atlas.lib.StrUtils;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
@@ -38,7 +41,7 @@ public class EditBaseOwlService {
         OntModel model = ModelFactory.createOntologyModel();
         WotProperty property = new WotProperty();
         FileManager.get().readModel(model,new File(file).getAbsolutePath());
-        OntClass ontClass = model.getOntClass("http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#WoTProperty");
+        OntClass ontClass = model.getOntClass("http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#PropertyLabel");
 
         if (ontClass == null){
             return null;
@@ -56,7 +59,7 @@ public class EditBaseOwlService {
         while (iterable.hasNext()){
             OntClass subclass = iterable.next();
             conceptUriMap.put(subclass.getLocalName(),subclass.getURI());
-            if ( (subclass.getSuperClass().equals(ontClass) || subclass.getSuperClass().getLocalName() == null) && subclass != null && subclass.getLocalName() != null){
+            if ( subclass != null && subclass.getLocalName() != null){
                 concepts.add(subclass.getLocalName());
                 ExtendedIterator<OntClass> subIterable = subclass.listSubClasses();
                 List<String> subconcept = new ArrayList<>();
@@ -77,6 +80,7 @@ public class EditBaseOwlService {
         property.setMap(map);
         property.setIsselect(selectmap);
         property.setConceptUriMap(conceptUriMap);
+        property.setFileName(file);
         System.out.println(conceptUriMap);
         return property;
     }
@@ -101,36 +105,52 @@ public class EditBaseOwlService {
 
     }
 
-    public String pareSparql(String file,WotProperty property, HttpServletRequest resquest){
+    public Integer getLastId(String tableName){
+        if (mDao.searchLastId(tableName) == null){
+            return 0;
+        }
+        return mDao.searchLastId(tableName);
+    }
+
+    public String pareSparql(String file,WotProperty property, HttpServletRequest request,int id){
 
         String prefix = ResolveRule.getSprqlPre(file);
         List<String> concepts = property.getConcepts();
         Map<String,String> map = property.getConceptUriMap();
 
-        List<String> res = new ArrayList<>();
-        String device_type = "ssn:Sensor";
-        res.add("insert{");
-        res.add("GRAPH wot:sensor_annotation {");
-        res.add("?device rdf:type "+device_type+". ");
-//                "?region rdf:type wot:Region. ",
-//                device_type +"?a1 wot:Region. ",
-//                "?device"+ "?a1"+"?region. ",
 
+
+        List<String> res = new ArrayList<>();
+        res.add(prefix);
+        String device_type = "ssn:Sensor";
+        res.add("INSERT{");
+        res.add("GRAPH "+"WoT_domain:sensor_annotation {");
+        res.add("?device rdf:type "+device_type+". ");
+        res.add("?device WoT_domain:deviceID \""+id+"\"^^xsd:string. ");
+
+        concepts.remove("name");
+        concepts.remove("description");
+        String NS = map.get(concepts.get(0)).split("#")[0]+"#";
         for (int i=0;i<concepts.size();i++){
             String concept = concepts.get(i);
-            res.add("?"+concept.toLowerCase()+" rdf:type "+map.get(concept)+". ");
-            res.add(device_type +"?a"+i+" "+map.get(concept)+". ");
-            res.add("?device"+ "?a"+i+" ?"+concept.toLowerCase()+". ");
+            res.add("?"+concept.toLowerCase()+" rdf:type WoT_domain:"+concept+". ");
+
+            res.add("?device"+ " ?a"+i+" ?"+concept.toLowerCase()+". ");
         }
+        res.add("?device WoT_domain:hasState WoT_domain:nomal. ");
         res.add("}");
-        res.add(" } USING "+new File(file).getName()+" ");
+        res.add("} USING "+ "WoT_domain:sensor_annotation ");
         res.add("where {");
         for (int i=0;i<concepts.size();i++){
-            res.add("BIND(URI(CONCAT(");
-//            "BIND(URI(CONCAT(\""+NS_WOT+"\",\""+metadata_avp.get("name")+"\")) as ?device). ",
-//                    "BIND(URI(CONCAT(\""+NS_WOT+"\",\""+metadata_avp.get("hasLocation")+"\")) as ?region). ",
+            String concept = concepts.get(i);
+            res.add("?a"+i+" rdfs:domain "+device_type+" ;");
+            res.add("rdfs:range WoT_domain:"+concept+".");
+            res.add("BIND(URI(CONCAT(\""+NS+"\",\""+request.getParameter(concepts.get(i))+"\")) as ?"+concepts.get(i).toLowerCase()+"). ");
         }
-        System.out.println(StrUtils.strjoinNL(res));
+        res.add("BIND(URI(CONCAT(\""+NS+"\",\""+request.getParameter("name")+"\")) as ?device) }");
+
+//        String update = StrUtils.strjoinNL(res);
+//        System.out.println(update);
 
         return StrUtils.strjoinNL(res);
     }

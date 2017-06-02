@@ -454,11 +454,11 @@ public class DeviceService {
 						"GRAPH wot:sensor_annotation {",
 						"?device rdf:type "+device_type+". ",
 						"?device wot:deviceID \""+id+"\"^^xsd:string.",
-//						"?device wot:hasState wot:nomal. ",
+						"?device wot:hasState wot:nomal. ",
 						//region
 						"?region rdf:type wot:Region. ",
-						device_type +"?a1 wot:Region. ",
-						"?device"+ "?a1"+"?region. ",
+						device_type +" ?a1 wot:Region. ",
+						"?device"+ " ?a1"+"?region. ",
 						//spot
 						"?spot rdf:type wot:Spot. ",
 						"?device wot:hasSpot ?spot. ",

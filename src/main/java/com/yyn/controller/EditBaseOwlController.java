@@ -1,8 +1,12 @@
 package com.yyn.controller;
 
+import com.yyn.model.MyOwl;
 import com.yyn.model.WotProperty;
 import com.yyn.service.EditBaseOwlService;
+import com.yyn.util.RDFReasoning;
 
+import org.apache.jena.query.Dataset;
+import org.apache.jena.query.ReadWrite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,9 +62,20 @@ public class EditBaseOwlController {
             sql = sql +"'"+request.getParameter(str)+"', ";
         }
         sql = sql.substring(0,sql.length()-2)+")";
-        System.out.println(sql);
+//        System.out.println(sql);
         mService.insertDevice(sql);
-        mService.pareSparql(file,property,request);
+        int id = mService.getLastId(property.getTableName());
+        String update = mService.pareSparql(file,property,request,id);
+        System.out.println(update);
+        String fileName = property.getFileName();
+        String root = new File(fileName).getParent();
+        System.out.println(root);
+        Dataset ds = (Dataset) request.getServletContext().getAttribute("dataset");
+        ds.begin(ReadWrite.WRITE);
+        RDFReasoning.updateQuery(update,ds);
+        ds.commit();
+        ds.end();
+        RDFReasoning.output(ds,new File(root,"output.owl").getAbsolutePath());
         return "expand/adddevice.jsp";
     }
 
