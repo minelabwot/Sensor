@@ -12,6 +12,8 @@ public class MyOwl {
     private String file;
     private String root;
     private String rule;
+    private String uri;
+    private int user_id;
 
     public MyOwl(Integer id, String name, String description, String file, String root, String rule) {
         this.id = id;
@@ -22,11 +24,38 @@ public class MyOwl {
         this.rule = rule;
     }
 
+    public MyOwl(Integer id, String name, String description, String file, String root, String rule, String uri) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.file = file;
+        this.root = root;
+        this.rule = rule;
+        this.uri = uri;
+    }
+
+    public MyOwl(String name, String description, String file, String root, String uri,int user_id) {
+        this.name = name;
+        this.description = description;
+        this.file = file;
+        this.root = root;
+        this.uri = uri;
+        this.user_id = user_id;
+    }
+
     public MyOwl(String name, String description, String file, String root) {
         this.name = name;
         this.description = description;
         this.file = file;
         this.root = root;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
     public String getRule() {
@@ -99,7 +128,7 @@ public class MyOwl {
                 ", description='" + description + '\'' +
                 ", file='" + file + '\'' +
                 ", root='" + root + '\'' +
-                ", rule='" + rule + '\'' +
+                ", uri='" + uri + '\'' +
                 '}';
     }
 }

@@ -28,6 +28,7 @@ import com.yyn.model.Device;
 import com.yyn.model.Relation;
 import com.yyn.model.Rule;
 import com.yyn.model.Struct;
+import com.yyn.util.NameSpaceConstants;
 import com.yyn.util.RDFReasoning;
 
 @Service
@@ -78,7 +79,43 @@ public class DeviceService {
 			}
 		return -1;
 	}
-	
+	//add action
+	public void addAction2TDB(String id , String name,String url,String param,String lifecycle,String effect,Dataset ds) {
+		Map<String,String> map = new HashMap<>();
+		map.put("increment","1");
+		map.put("decrement","-1");
+
+		ds.begin(ReadWrite.WRITE);
+		try {
+			String update = StrUtils.strjoinNL(
+					NameSpaceConstants.PREFIX,
+					"INSERT { ",
+					"GRAPH wot:sensor_annotation {",
+					"?device msm:hasOperation ?operation. ",
+					"?operation a san:Actuation. ",
+					"?operation wot:hasAddress \""+url+"\"^^xsd:string. ",
+					"?operation wot:hasParam \""+param+"\"^^xsd:string. ",
+					"?lifecycle a wot:State. ",
+					"?lifecycle wot:hasValue \""+map.get(effect)+"\"^^xsd:int. ",
+					"?device wot:hasState ?lifecycle. ",
+					"?effect a wot:PostCondition. ",
+					"?device wot:triggers ?effect. ",
+					"?effect wot:resultIn \""+map.get(effect)+"\"^^xsd:int. ",
+					"?operation dul:includesEvent ?effect. }",
+					" } USING wot:sensor_annotation ",
+					" WHERE {",
+					"?device wot:deviceID '"+id+ "'^^xsd:string. ",
+					"?device wot:hasType ?entityType. ",
+					"BIND(URI(CONCAT(\""+NameSpaceConstants.WOT+"\",STRAFTER(str(?device),'#'),'_',\""+name+"\")) as ?operation). ",
+					"BIND(URI(CONCAT(\""+NameSpaceConstants.WOT+"\",STRAFTER(str(?entityType),'#'),'_',\""+lifecycle+"\")) as ?lifecycle). ",
+					"BIND(URI(CONCAT(\""+ NameSpaceConstants.WOT+"\",STRAFTER(str(?device),'#'),'_',\""+effect+"\")) as ?effect). }");
+			RDFReasoning.updateQuery(update, ds);
+
+			ds.commit();
+		} finally {
+			ds.end();
+		}
+	}
 	//ver 2016 11,11
 	public void addObjectProperty(Map<String,String> map,int id) {
 		Driver driver = GraphDatabase.driver( "bolt://localhost", AuthTokens.basic( "neo4j", "930208" ) );
@@ -436,12 +473,17 @@ public class DeviceService {
 	//TDB method
 	public void add2TDB(int id,HttpServletRequest request,Dataset ds,Map<String,String> metadata_avp,String deviceType) {
 		ds.begin(ReadWrite.WRITE);
-		String device_type = null;
-		if("Sensor".equals(deviceType))
-			device_type = "ssn:"+deviceType;
-		else
-			device_type = "wot:"+deviceType;
-
+		String device_type;
+		String state;
+		if("Sensor".equals(deviceType)) {
+			device_type = "ssn:" + deviceType;
+			state = "?device wot:currentStatus wot:nomal. ";
+		}
+		else {
+			device_type = "SAN:" + deviceType;
+			state = "?device wot:currentState wot:off. " +
+					"?device wot:currentStatus wot:nomal. ";
+		}
 		try {
 			String update = StrUtils.strjoinNL(
 					"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",

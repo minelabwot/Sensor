@@ -17,26 +17,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.yyn.service.AnomalyService;
+import com.yyn.util.NameSpaceConstants;
 import com.yyn.util.RDFReasoning;
 
 @Controller
 public class AnomalyController {
-	@Autowired
-	AnomalyService as;
 	@RequestMapping("/Anomaly_showAllAnomaly.do")
 	public String generateDiagnosisModel(HttpServletRequest request,Model model) {
-		Dataset ds = (Dataset)request.getServletContext().getAttribute("dataset");
+		Dataset ds = (Dataset) request.getServletContext().getAttribute("dataset");
 		Map<String,List<String>> causes = new HashMap<>();
 		Map<String,String> times = new HashMap<>();
 		ds.begin(ReadWrite.READ);
 		try {
 			String query = StrUtils.strjoinNL(
-					"PREFIX wot: <http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#> ",
-					"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ",
-					"PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#> ",
-					"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ",
+					NameSpaceConstants.PREFIX,
 					"SELECT ?anomaly ?cause ?time",
 					"WHERE { GRAPH wot:sensor_annotation { ?anomaly a wot:Anomaly.",
 					"?anomaly wot:hasPotCause ?cause.",
@@ -53,17 +50,17 @@ public class AnomalyController {
 					causes.get(ano.getLocalName()).add(cau.getLocalName());
 				}
 				else {
-					List<String> list = new ArrayList<String>();
+					List<String> list = new ArrayList<>();
 					list.add(cau.getLocalName());
 					causes.put(ano.getLocalName(), list);
 				}
-				times.put(ano.getLocalName(), time.toString());
+				times.put(ano.getLocalName(), time);
 			}
-			
+
 			model.addAttribute("anomalys", causes);
 			model.addAttribute("times", times);
 			ds.commit();
-		} finally { 
+		} finally {
 			ds.end();
 		}
 		return "servicePage/anomalyList.jsp";

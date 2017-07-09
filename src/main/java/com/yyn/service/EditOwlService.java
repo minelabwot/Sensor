@@ -36,8 +36,8 @@ public class EditOwlService {
 
 	@Autowired
 	OwlDao mDao;
-	public List<MyOwl> listOwl(HttpServletRequest request){
-		return mDao.queryAll();
+	public List<MyOwl> listOwl(HttpServletRequest request,int userId){
+		return mDao.queryAll(userId);
 	}
 
 	public void deleteOwlByFile(String file){

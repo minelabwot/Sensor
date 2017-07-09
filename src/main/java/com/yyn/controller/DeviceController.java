@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.yyn.model.Device;
 import com.yyn.model.User;
@@ -94,19 +95,17 @@ public class DeviceController {
 		model.addAttribute("actuators", ds.showAllDevice(owner,"Actuator"));
 		return "servicePage/deviceList.jsp";
 	}
-	
-	
+
+
 	@RequestMapping("/deviceDetail.do")
-	public String showDetail(String id, Model model) {
+	public String showDetail(String id, String deviceType, Model model) {
 		Map<String,String> map = new HashMap<>();
 		map.put("id",id);
-		@SuppressWarnings("rawtypes")
-		List list = ds.showDetail(id,map);
+		ds.showDetail(id,map);
 		model.addAttribute("avp", map);
-		model.addAttribute("events_actions", list);
 		model.addAttribute("id", id);
-		model.addAttribute("rules",ds.showRule(id));
-		return "servicePage/detail.jsp";
+		model.addAttribute("deviceType",deviceType);
+		return "redirect:dynamic/goActDetail.do?id="+id;
 	}
 	
 	@RequestMapping("/deviceSearching.do")
@@ -150,5 +149,24 @@ public class DeviceController {
 			model.addAttribute("devices", devices);
 		}
 		return "forward:/index.jsp";
+	}
+
+	@RequestMapping("/deviceActionAdd.do")
+	public String addOperation(HttpServletRequest request,Model model) {
+		Map<String,String[]> map = request.getParameterMap();
+		String id = map.get("deviceId")[0];
+		System.out.println(id);
+		String[] name = map.get("action_name[]");
+		String[] url = map.get("action_urlTemplate[]");
+		String[] param = map.get("action_messageContent[]");
+		String[] lifecycle = map.get("action_lifecycle[]");
+		String[] effect = map.get("action_effect[]");
+		Dataset dataset = (Dataset) request.getServletContext().getAttribute("dataset");
+//		System.out.println(name.length);
+		for(int i=0;i<name.length;++i) {
+			System.out.println(id+"_"+name[i]+"_"+url[i]+"_"+param[i]+"_"+lifecycle[i]+"_"+effect[i]);
+			ds.addAction2TDB(id, name[i], url[i], param[i], lifecycle[i], effect[i], dataset);
+		}
+		return "redirect:dynamic/goActuatorDetail.do?id="+id;
 	}
 }

@@ -43,6 +43,10 @@ text-align: center;
 			<tr>
 				<td>本体描述<input type="text" name="description" /></td>
 			</tr>
+
+			<tr>
+				<td>本体URI<input type="text" name="uri" /></td>
+			</tr>
 			<tr>
 				<td><input type="submit" value="提交" /></td>
 			</tr>

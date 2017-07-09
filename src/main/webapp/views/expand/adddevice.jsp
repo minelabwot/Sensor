@@ -29,17 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<option value="Sensor">Sensor</option>
 		<option value="Actuator">Actuator</option>
 	</select></div>
-<%--   <input type="hidden" name="deviceType" value="${deviceType}"> --%>
-  <%--<div class="form-group">--%>
-    <%--<label class="col-sm-4 col-xs-12 control-label">设备名称(Name)</label>--%>
-    <%--<div class="col-sm-8 col-xs-12"><input class="form-control" id="device_name" name="device[name]" type="text" /></div>--%>
-  <%--</div>--%>
-
-	<%--<div class="form-group">--%>
-		<%--<label class="col-sm-4 col-xs-12 control-label">设备描述(Description)</label>--%>
-		<%--<div class="col-sm-8 col-xs-12"><textarea class="form-control" id="device_description" name="device[description]">--%>
-		<%--</textarea></div>--%>
-	<%--</div>--%>
 
     <c:set var="map" value="${wotProperty.map}"/>
     <c:forEach var="property" items="${wotProperty.concepts}">
@@ -63,50 +52,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </c:forEach>
-    
-
-  <%--<div class="form-group">--%>
-		    <%--<label class="col-sm-4 col-xs-12 control-label">观测属性(Property)</label>--%>
-		    <%--<div class="col-sm-8 col-xs-12"><select class="form-control" id="device_property" name="device[property]">--%>
-		    <%--<option></option>--%>
-		    <%--<option value="Temperature">Temperature</option>--%>
-		    <%--<option value="Cooling">Cooling</option>--%>
-		    <%--<option value="Occupation">Occupation</option>--%>
-		    <%--<option value="Humidity">Humidity</option>--%>
-		    <%--<option value="Pressure">Pressure</option>--%>
-		    <%--<option value="Wind_direction">Wind_direction</option>--%>
-		    <%--<option value="Wind_speed">Wind_speed</option>--%>
-		    <%--<option value="Carbon_Monoxide">Carbon Monoxide</option>--%>
-		    <%--<option value="Nitrogen_Dioxide">Nitrogen_dioxide</option>--%>
-		    <%--<option value="Sulfur_Dioxide">Sulfur_dioxide</option>--%>
-		    <%--<option value="Oxygen">Oxygen</option>--%>
-		    <%--<option value="Carbon_Dioxide">Carbon Dioxide</option>--%>
-		    <%--<option value="Congestion">Congestion</option>--%>
-		    <%--<option value="AirCleaner">AirCleaner</option>--%>
-		    <%--<option value="PM">PM</option>--%>
-		    <%--</select></div>--%>
-	<%--</div>--%>
-  <%--<div class="form-group">--%>
-	    <%--<label class="col-sm-4 col-xs-12 control-label">测量单位(Unit)</label>--%>
-	    <%--<div class="col-sm-8 col-xs-12"><input class="form-control" id="device_unit" name="device[unit]" type="text" /></div>--%>
-	  <%--</div>--%>
-	 <%--<div class="form-group">--%>
-	    <%--<label class="col-sm-4 col-xs-12 control-label">所属机构(Owner)</label>--%>
-	    <%--<div class="col-sm-8 col-xs-12"><input class="form-control" id="device_company" name="device[company]" type="text" /></div>--%>
-    <%--</div>--%>
-  <%--<div class="form-group">--%>
-    <%--<label class="col-sm-4 col-xs-12 control-label">地区(Region)</label>--%>
-    <%--<div class="col-sm-8 col-xs-12">--%>
-      <%--<input class="form-control" id="device_region" name="device[region]" type="text" />--%>
-    <%--</div>--%>
-  <%--</div>--%>
-  <%--<div class="form-group">--%>
-    <%--<label class="col-sm-4 col-xs-12 control-label">场所(Spot)</label>--%>
-    <%--<div class="col-sm-8 col-xs-12">--%>
-      <%--<input class="form-control" id="device_spot" name="device[spot]" type="text" />--%>
-    <%--</div>--%>
-  <%--</div>--%>
-
   <div class="form-group">
     <label class="col-sm-4 control-label"></label>
     <div class="col-sm-8 col-xs-12"><p class="form-control-static"><input class="btn btn-primary" id="device_form_submit" name="commit" type="submit" value="保存设备" /></p></div>

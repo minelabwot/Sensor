@@ -13,6 +13,15 @@ public class WotProperty {
     private Map<String,String> conceptUriMap;
     private Map<String,Boolean> isselect;
     private String fileName;
+    private String uri;
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
 
     public String getFileName() {
         return fileName;

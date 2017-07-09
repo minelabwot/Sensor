@@ -5,4 +5,5 @@ package com.yyn.config;
  */
 public class TDBConfig {
     public static String root = "E:/sensor/tdb/";
+    public static String file = "E:/sensor/";
 }

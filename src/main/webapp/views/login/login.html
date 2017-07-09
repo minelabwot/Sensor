@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../../assets/css/form-elements.css">
-        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/login.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,78 +23,40 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
 
     </head>
 
-    <body>
+    <body class="form-bg">
 
-        <!-- Top content -->
-        <div class="top-content">
-        	
-            <div class="inner-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>用  户  登  录</strong></h1>
-                            <div class="description">
-                            	<p>
-	                            	还没有账号?快去
-	                            	<a href="./register.html">注册</a> 吧.
-                            	</p>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal" action="/userLogin.do" method="post">
+                    <span class="heading">用户登录</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="用户名">
+                        <i class="fa fa-user"></i>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
-                        	<div class="form-top">
-                        		<div class="form-top-left">
-                        			<h3>Login Form</h3>
-                            		<p>Enter your username and password:</p>
-                        		</div>
-                        		<div class="form-top-right">
-                        			<i class="fa fa-lock"></i>
-                        		</div>
-                            </div>
-                            <div class="form-bottom">
-			                    <form role="form" action="/userLogin.do" method="post" class="login-form">
-			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Username</label>
-			                        	<input type="text" name="username" placeholder="Username" class="form-username form-control" id="form-username">
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
-			                        	<input type="password" name="password" placeholder="Password" class="form-password form-control" id="form-password">
-			                        </div>
-			                        <button type="submit" class="btn">Submit</button>
-			                    </form>
-		                    </div>
-                        </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" name="password" placeholder="密　码">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 social-login">
-                        	<h3>or login with:</h3>
-                        	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-facebook"></i> Facebook
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-twitter"></i> Twitter
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-google-plus"></i> Google Plus
-	                        	</a>
-                        	</div>
+                    <div class="form-group">
+                        <div class="main-checkbox">
+                            <input type="checkbox" value="None" id="checkbox1" name="check"/>
+                            <label for="checkbox1"></label>
                         </div>
+                        <span class="text">Remember me</span>
+
+                        <a class="text" href="register.html">注 册</a>
+                        <button type="submit" class="btn btn-default">登录</button>
                     </div>
-                </div>
+                </form>
             </div>
-            
         </div>
+    </div>
 
 
         <!-- Javascript -->

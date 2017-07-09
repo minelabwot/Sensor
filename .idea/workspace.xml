@@ -2,38 +2,149 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1bcc680-3f99-4c32-abec-453ab2479ea8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/datasource.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/anomaly_config.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation.war" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/config/NameSpaceConstants.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/ConfigController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/DynamicDeviceController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/interceptor/LoginIntercepter.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/model/SensorConfig.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/yyn/scheduler/AnomalyDetectTask.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/config/NameSpaceConstants.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/ConfigController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/DynamicDeviceController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/interceptor/LoginIntercepter.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/model/SensorConfig.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/scheduler/AnomalyDetectTask.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/collection-0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/commons-beanutils-1.8.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/commons-csv-1.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/httpclient-cache-4.5.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-base-3.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-core-3.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-fuseki-core-2.6.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-fuseki-embedded-2.6.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-tdb-3.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-continuation-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-http-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-io-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-security-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-server-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-servlet-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-servlets-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-util-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-webapp-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jetty-xml-9.3.3.v20150827.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jsonld-java-0.8.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/shiro-core-1.2.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/shiro-web-1.2.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_fuseki_core_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_fuseki_embedded_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlets_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_3_3_v20150827.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/doc/sensor_annotation.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/config/NameSpaceConstants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/ConfigController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/DynamicDeviceController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/interceptor/LoginIntercepter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/model/SensorConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/scheduler/AnomalyDetectTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/actuatorDetail.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/sensorConfig.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/sensorDetail.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/assets/css/login.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/actuatorDetail.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/sensorConfig.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/sensorDetail.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/commons-csv-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/dexx-collections-0.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/httpclient-cache-4.2.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-base-3.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-core-3.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-tdb-3.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jsonld-java-0.7.0.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/config/TDBConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/config/TDBConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/AnomalyController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/AnomalyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/DataController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/DataController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/DeviceController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/DeviceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/EditBaseOwlController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/EditBaseOwlController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/EditOwlController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/EditOwlController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/OwlUploadController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/OwlUploadController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/RuleController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/RuleController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/dao/BaseDeviceDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/dao/BaseDeviceDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/dao/OwlDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/dao/OwlDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/dao/UserLoginDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/dao/UserLoginDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/model/MyOwl.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/model/MyOwl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/model/WotProperty.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/model/WotProperty.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/AnomalyService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/AnomalyService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/DeviceService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/DeviceService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/EditBaseOwlService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/EditBaseOwlService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/EditOwlService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/EditOwlService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/OwlUploadService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/OwlUploadService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/RelationComparator.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/RelationComparator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/RuleService.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/RuleService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/StartupListener$1.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/StartupListener$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/StartupListener.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/StartupListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/service/StrutsComparator.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/service/StrutsComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/util/NameSpaceConstants.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/util/NameSpaceConstants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yyn/util/RDFReasoning.class" afterPath="$PROJECT_DIR$/target/classes/com/yyn/util/RDFReasoning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation.war" afterPath="$PROJECT_DIR$/target/sensor_annotation.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/config/TDBConfig.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/config/TDBConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/AnomalyController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/AnomalyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/DataController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/DataController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/DeviceController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/DeviceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/EditBaseOwlController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/EditBaseOwlController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/EditOwlController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/EditOwlController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/OwlUploadController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/OwlUploadController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/RuleController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/RuleController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/UserController.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/BaseDeviceDao.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/BaseDeviceDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/OwlDao.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/OwlDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/UserLoginDAO.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/dao/UserLoginDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/model/MyOwl.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/model/MyOwl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/model/WotProperty.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/model/WotProperty.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/AnomalyService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/AnomalyService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/DeviceService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/DeviceService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/EditBaseOwlService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/EditBaseOwlService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/EditOwlService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/EditOwlService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/OwlUploadService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/OwlUploadService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/RelationComparator.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/RelationComparator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/RuleService.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/RuleService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StartupListener$1.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StartupListener$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StartupListener.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StartupListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StrutsComparator.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/service/StrutsComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/util/NameSpaceConstants.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/util/NameSpaceConstants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/util/RDFReasoning.class" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/classes/com/yyn/util/RDFReasoning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sensor_annotation_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sensor_annotation_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sensor_annotation.iml" afterPath="$PROJECT_DIR$/sensor_annotation.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/doc/本工程配置的注意事项.txt" afterPath="$PROJECT_DIR$/src/doc/本工程配置的注意事项.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/AnomalyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/AnomalyController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/DataController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/DataController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/DeviceController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/DeviceController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/OwlUploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/OwlUploadController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/RuleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/RuleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/controller/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/dao/BaseDeviceDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/dao/BaseDeviceDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/dao/OwlDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/dao/OwlDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/dao/UserLoginDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/dao/UserLoginDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/model/WotProperty.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/model/WotProperty.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java" />
@@ -43,10 +154,43 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/service/RuleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/service/RuleService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/util/NameSpaceConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/util/NameSpaceConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java" afterPath="$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mvc_web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mvc_web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expand/adddevice.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/adddevice.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expand/mydevicelist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/mydevicelist.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expand/owllist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/owllist.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expand/uploadowl.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/uploadowl.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expand/writerule.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/expand/writerule.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/login/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/login/register.html" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/config/spring_mvc_web.xml" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/config/spring_mvc_web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/common/userInfoBar.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/common/userInfoBar.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/expand/adddevice.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/adddevice.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/expand/mydevicelist.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/mydevicelist.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/expand/owllist.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/owllist.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/expand/uploadowl.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/uploadowl.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/expand/writerule.jsp" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/expand/writerule.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/login/login.html" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/login/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sensor_annotation/views/login/register.html" afterPath="$PROJECT_DIR$/target/sensor_annotation/views/login/register.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_andrewoma_dexx_collection_0_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsonld_java_jsonld_java_0_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsonld_java_jsonld_java_0_8_3.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_csv_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_csv_1_3.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_cache_4_2_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_cache_4_5_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_arq_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_arq_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_base_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_base_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_core_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_core_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_iri_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_iri_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_shaded_guava_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_shaded_guava_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_tdb_3_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_jena_jena_tdb_3_1_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_thrift_libthrift_0_9_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_thrift_libthrift_0_9_3.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-arq-3.0.1.jar" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-arq-3.1.1.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-iri-3.0.1.jar" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-iri-3.1.1.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-shaded-guava-3.0.1.jar" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/jena-shaded-guava-3.1.1.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/libthrift-0.9.2.jar" afterPath="$PROJECT_DIR$/target/sensor_annotation/WEB-INF/lib/libthrift-0.9.3.jar" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,61 +203,86 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="sensor_annotation" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="本工程配置的注意事项.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/doc/本工程配置的注意事项.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NameSpaceConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/config/NameSpaceConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TDBConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="45" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RDFReasoning.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1596">
+              <caret line="110" column="14" lean-forward="false" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StartupListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnomalyService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="84" column="27" lean-forward="true" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="1159">
+              <caret line="97" column="40" lean-forward="false" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditBaseOwlController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java">
+      <file leaf-file-name="datasource.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="67" column="41" lean-forward="false" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="266">
+              <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RDFReasoning.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java">
+      <file leaf-file-name="sensor_annotation.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/doc/sensor_annotation.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="146" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditBaseOwlService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/EditBaseOwlService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
-              <caret line="154" column="39" lean-forward="true" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,37 +296,42 @@
         <option value="mybatis-config" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userLogin.do</find>
-      <find>expandOwl</find>
-      <find>myOwl</find>
-      <find>conceptslist</find>
-      <find>mybatis</find>
-      <find>mark</find>
-      <find>println</find>
-      <find>owllist</find>
-      <find>map</find>
-      <find>deviceEdit</find>
-      <find>devicePropertyAdd</find>
-      <find>addInstance</find>
-      <find>fore</find>
-      <find>select</find>
-      <find>info</find>
-      <find>deviceShowAll</find>
-      <find>log4j</find>
-      <find>realName</find>
-      <find>model</find>
-      <find>updateData</find>
-      <find>addCommonDevice</find>
-      <find>getWotProperty</find>
-      <find>wotProperty</find>
-      <find>System.out.println</find>
-      <find>addDevice</find>
-      <find>Device</find>
+      <find>myDevice</find>
+      <find>goDeviceAddPage</find>
+      <find>mDao</find>
+      <find>devicede</find>
+      <find>mydevice</find>
+      <find>deviceNameList</find>
+      <find>Anomaly_showAllAnomaly.do</find>
+      <find>device_form</find>
+      <find>System.out.printl</find>
+      <find>swot-o.owl</find>
+      <find>device_type</find>
+      <find>sensor_data_update</find>
+      <find>Anomaly_showAllAnomaly</find>
+      <find>deviceActionAdd</find>
+      <find>temp_high</find>
+      <find>val</find>
+      <find>status</find>
+      <find>go</find>
+      <find>id</find>
+      <find>goWriteRule</find>
+      <find>mvc:interceptors</find>
+      <find>form-horizontal</find>
+      <find>form-bg</find>
+      <find>center</find>
+      <find>System</find>
+      <find>dataserv</find>
+      <find>DataService</find>
+      <find>init</find>
+      <find>listowl</find>
+      <find>login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,47 +345,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/views/login/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/entity/Owl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/entity/MyOwl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/uploadowl.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/Owl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/OwlMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/Owldata.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/editowl.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mybatis.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/adddevice.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/BseDeviceDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/DeviceController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/BaseMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/DeviceMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/mydevicelist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/util/Resolve.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/util/ResolveRule.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/writerule.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/DeviceService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/RuleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/BaseDeviceDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/anomaly_config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/WotProperty.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/owllist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/EditOwlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/datasource.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/RuleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/OwlDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/OwlUploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/DataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/uploadowl.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/WotProperty.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/servicePage/detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/adddevice.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/deviceDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/DeviceService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/util/NameSpaceConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/AnomalyController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/actuatorDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/DeviceController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/SensorConfig.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/SensorConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/sensorConfig.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/ConfigController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/EditBaseOwlService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/DataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/sensorDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/owllist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/RuleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/RuleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/BaseDeviceDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/mydevicelist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/DynamicDeviceController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/expand/writerule.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/interceptor/LoginIntercepter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mvc_web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/OwlUploadController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/EditOwlService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/OwlDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/scheduler/AnomalyDetectTask.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/dao/UserLoginDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/login/register.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/login/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java" />
+        <option value="$PROJECT_DIR$/src/doc/本工程配置的注意事项.txt" />
       </list>
     </option>
   </component>
@@ -228,11 +412,46 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sensor_annotation Maven Webapp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="sensor_annotation Maven Webapp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -253,6 +472,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,10 +485,163 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yyn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yyn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensor_annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,18 +650,37 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/fuseki-server.jar!/" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yyn.scheduler" />
       <recent name="com.yyn.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\eclipsepro\sensor_annotation\src\main\resources" />
-      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\WEB-INF\mapper" />
-      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\views\expand" />
-      <recent name="H:\eclipsepro\sensor_annotation\src\main\java\com\yyn\util" />
-      <recent name="H:\eclipsepro\sensor_annotation\src\main\java\com\yyn\service" />
+      <recent name="H:\eclipsepro\sensor_annotation\src\doc" />
+      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\WEB-INF\lib" />
+      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\assets\font" />
+      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\assets\img" />
+      <recent name="H:\eclipsepro\sensor_annotation\src\main\webapp\assets\css" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -584,6 +976,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -670,7 +1069,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -683,9 +1082,10 @@
       <method />
     </configuration>
     <configuration default="false" name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M10" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="sensor_annotation:war">
+        <artifact name="sensor_annotation:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -750,7 +1150,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="sensor_annotation:war" />
+          <artifact name="sensor_annotation:war exploded" />
         </option>
       </method>
     </configuration>
@@ -809,11 +1209,61 @@
       <workItem from="1496367869489" duration="3384000" />
       <workItem from="1496371358983" duration="3122000" />
       <workItem from="1496380321185" duration="7743000" />
+      <workItem from="1496391190296" duration="839000" />
+      <workItem from="1496553941031" duration="985000" />
+      <workItem from="1496555263376" duration="3918000" />
+      <workItem from="1496625731834" duration="3668000" />
+      <workItem from="1496712920352" duration="5081000" />
+      <workItem from="1496728390126" duration="75000" />
+      <workItem from="1496728495855" duration="3425000" />
+      <workItem from="1496799159624" duration="2458000" />
+      <workItem from="1496802316576" duration="607000" />
+      <workItem from="1496805134526" duration="393000" />
+      <workItem from="1496805601872" duration="4495000" />
+      <workItem from="1496901454622" duration="5513000" />
+      <workItem from="1496912753040" duration="1875000" />
+      <workItem from="1496978291022" duration="1228000" />
+      <workItem from="1497232400176" duration="5085000" />
+      <workItem from="1497323030848" duration="1772000" />
+      <workItem from="1497408004362" duration="8979000" />
+      <workItem from="1497428903007" duration="717000" />
+      <workItem from="1497430080445" duration="136000" />
+      <workItem from="1497491080419" duration="9459000" />
+      <workItem from="1497591433486" duration="772000" />
+      <workItem from="1497592269453" duration="1450000" />
+      <workItem from="1497753650689" duration="147000" />
+      <workItem from="1497838030055" duration="2083000" />
+      <workItem from="1497855019256" duration="7086000" />
+      <workItem from="1497926155657" duration="2839000" />
+      <workItem from="1498013777357" duration="720000" />
+      <workItem from="1498023244742" duration="4176000" />
+      <workItem from="1498116985399" duration="21000" />
+      <workItem from="1498185864058" duration="1158000" />
+      <workItem from="1498196743149" duration="1917000" />
+      <workItem from="1498203764556" duration="923000" />
+      <workItem from="1498206665948" duration="606000" />
+      <workItem from="1498443487372" duration="61000" />
+      <workItem from="1498443567790" duration="44000" />
+      <workItem from="1498443935344" duration="9621000" />
+      <workItem from="1498551382991" duration="243000" />
+      <workItem from="1498573219210" duration="14000" />
+      <workItem from="1498790457613" duration="8295000" />
+      <workItem from="1499046916331" duration="10348000" />
+      <workItem from="1499069006095" duration="86000" />
+      <workItem from="1499132959591" duration="2994000" />
+      <workItem from="1499153439984" duration="1000000" />
+      <workItem from="1499219098654" duration="2610000" />
+      <workItem from="1499221735815" duration="8901000" />
+      <workItem from="1499343949929" duration="128000" />
+      <workItem from="1499391274800" duration="80000" />
+      <workItem from="1499406949827" duration="1675000" />
+      <workItem from="1499491373381" duration="15000" />
+      <workItem from="1499567924398" duration="51000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169361000" />
+    <option name="totallyTimeSpent" value="300133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,33 +1275,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26898047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18463612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22814499" sideWeight="0.49403748" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1834239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29257643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2033046" sideWeight="0.49403748" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29512894" sideWeight="0.50596255" order="2" side_tool="true" content_ui="tabs" />
@@ -859,6 +1308,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24563318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -880,391 +1330,442 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/MessageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/img/backgrounds/back1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/UserLoginMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="195" column="30" lean-forward="false" selection-start-line="195" selection-start-column="25" selection-end-line="195" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/DeviceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/mydevicelist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/expand.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/editowl.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-base/3.0.1/jena-base-3.0.1-sources.jar!/org/apache/jena/atlas/lib/StrUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1653">
-          <caret line="4" column="118223" lean-forward="false" selection-start-line="4" selection-start-column="118223" selection-end-line="4" selection-end-column="118223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/uploadowl.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/FileUploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/servicePage/deviceEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/util/NameSpaceConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/AnomalyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/ELController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/writerule.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/DeviceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="462" column="43" lean-forward="false" selection-start-line="462" selection-start-column="43" selection-end-line="462" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/util/ResolveRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/dao/BaseDeviceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/anomaly_config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/RuleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/adddevice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="66" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/model/WotProperty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/expand/owllist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="35" column="57" lean-forward="false" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/EditOwlService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#1248#1249#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mvc_root.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/jquery.backstretch.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mybatis.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/ico/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/ico/apple-touch-icon-57-precomposed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/searchFriend.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="69" column="29" lean-forward="false" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="-541">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mapper/OwlMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/userMessage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/userInformation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/interceptor/LoginIntercepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="-58">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/spring_mvc_web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="471">
+          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.0.1/jena-arq-3.0.1-sources.jar!/org/apache/jena/sparql/core/DatasetImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="237" column="12" lean-forward="false" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/RuleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/common/importJs.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/htmleaf-demo.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="62" column="1" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/model/MyOwl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/EditOwlService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/dao/OwlDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="49" column="59" lean-forward="false" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
-          <folding />
+        <state relative-caret-position="263">
+          <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/OwlUploadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/scheduler/AnomalyDetectTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/OwlUploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="124" column="12" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="164">
+          <caret line="61" column="43" lean-forward="false" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/DataController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-tdb/3.0.1/jena-tdb-3.0.1-sources.jar!/org/apache/jena/tdb/transaction/TxnState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="163" column="48" lean-forward="true" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="76">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-core/3.0.1/jena-core-3.0.1.jar!/org/apache/jena/reasoner/rulesys/Rule.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="67" column="41" lean-forward="false" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="371">
+          <caret line="341" column="29" lean-forward="false" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/dao/DataCollectionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="280" column="34" lean-forward="false" selection-start-line="280" selection-start-column="34" selection-end-line="280" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/AnomalyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="354" column="15" lean-forward="false" selection-start-line="354" selection-start-column="15" selection-end-line="354" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/EditBaseOwlService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="154" column="39" lean-forward="true" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
+        <state relative-caret-position="171">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/EditBaseOwlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1634">
+          <caret line="108" column="37" lean-forward="false" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/common/userInfoBar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/dao/UserLoginDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login/success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="34" column="54" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/controller/EditOwlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/wot.owl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/model/SensorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/AnomalyService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="84" column="27" lean-forward="true" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/util/RDFReasoning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="146" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1596">
+          <caret line="110" column="14" lean-forward="false" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/service/StartupListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="97" column="40" lean-forward="false" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/config/TDBConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/sensor_annotation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yyn/config/NameSpaceConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/doc/本工程配置的注意事项.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>sensor_annotation:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>sensor_annotation</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.0.22</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

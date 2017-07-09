@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadBase;
@@ -34,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.yyn.model.User;
 import com.yyn.service.OwlUploadService;
 import com.yyn.util.RDFReasoning;
 
@@ -45,6 +47,11 @@ public class OwlUploadController {
 
 	@RequestMapping("owlupdate.do")
 	public String uploadOwl(@RequestParam("file") MultipartFile file, HttpServletRequest request) throws Exception {
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("userInfo");
+		if (user == null){
+			return "redirect:views/login/login.html";
+		}
 		if (null == file)
 			throw new Exception("上传失败,文件为空");
 		if (file.getSize() > 20000000)
@@ -60,6 +67,7 @@ public class OwlUploadController {
 			String name = request.getParameter("name");
 
 			String description = request.getParameter("description");
+			String uri = request.getParameter("uri");
 			String realName = file.getOriginalFilename();
 			String root = savePath+name+"/";
 			System.out.println(savePath + "_" + realName);
@@ -70,11 +78,8 @@ public class OwlUploadController {
 			File out = new File(root + File.separator + realName);
 			file.transferTo(out);
 
-			File tdbFile = new File(root+"tdb/");
-			if (!tdbFile.exists()){
-				tdbFile.mkdirs();
-			}
-			Dataset ds = TDBFactory.createDataset(tdbFile.getAbsolutePath());
+
+			Dataset ds = (Dataset) request.getServletContext().getAttribute("dataset");
 			OntModel model = ModelFactory.createOntologyModel();
 			FileManager.get().readModel(model, out.getAbsolutePath());
 			mService.createNewTable(realName.replace(".","").toLowerCase(),model);
@@ -84,8 +89,7 @@ public class OwlUploadController {
 			ds.commit();
 			ds.end();
 
-			mService.saveOwl(name,description,realName,root);
-
+			mService.saveOwl(name,description,realName,root,uri,user.getId());
 		}
 		return "redirect:/listowl.do";
 	}

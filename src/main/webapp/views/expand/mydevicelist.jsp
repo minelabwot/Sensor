@@ -16,20 +16,40 @@
 <c:import url="/views/common/userInfoBar.jsp"></c:import>
 <div class="page-body">
     <h1 align="center">我的设备</h1>
+
+    <h3>传感器Sensor</h3>
     <table class="table table-bordered">
 
-        <c:forEach var="device" items="${deviceMapList}" varStatus="status">
-            <c:if test="${status.index  == 0}">
-                <tr>
-                    <c:forEach items="${device}" var="property">
-                        <td><c:out value="${property.key}" /></td>
-                    </c:forEach>
-                </tr>
-            </c:if>
+        <tr>
+            <td>设备名称</td>
+            <td>删除设备</td>
+            <td>设备详情</td>
+        </tr>
+        <c:forEach var="device" items="${SensorMapList}" varStatus="status">
             <tr>
-                <c:forEach items="${device}" var="property">
-                    <td><c:out value="${property.value}" /></td>
-                </c:forEach>
+                <td><c:out value="${device.name}" /></td>
+                <td><a href="<%=basePath%>dynamic/deleteDetail.do?id=${device.id}">删除</a></td>
+                <td><a href="<%=basePath%>dynamic/goSensorDetail.do?id=${device.id}">查看详情</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+
+    <h3>执行器Actuator</h3>
+
+    <table class="table table-bordered">
+
+
+        <tr>
+            <td>设备名称</td>
+            <td>删除设备</td>
+            <%--<td>设备描述</td>--%>
+            <td>设备详情</td>
+        </tr>
+        <c:forEach var="device" items="${ActuatorMapList}" varStatus="status">
+            <tr>
+                <td><c:out value="${device.name}" /></td>
+                <td><a href="<%=basePath%>dynamic/deleteDetail.do?id=${device.id}">删除</a></td>
+                <td><a href="<%=basePath%>dynamic/goActuatorDetail.do?id=${device.id}">查看详情</a></td>
             </tr>
         </c:forEach>
     </table>

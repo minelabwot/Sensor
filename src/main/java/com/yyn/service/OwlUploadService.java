@@ -39,8 +39,8 @@ public class OwlUploadService {
 
 	@Autowired
 	OwlDao mDao;
-	public void saveOwl(String name,String des,String fileName,String root){
-		mDao.inserOwl(new MyOwl(name,des,fileName,root));
+	public void saveOwl(String name,String des,String fileName,String root,String uri,int userId){
+		mDao.inserOwl(new MyOwl(name,des,fileName,root,uri,userId));
 	}
 
 	public void createNewTable(String tablename, OntModel model){
@@ -48,7 +48,7 @@ public class OwlUploadService {
 
 		ExtendedIterator<OntClass> iterable = ontClass.listSubClasses();
 		List<String> concepts = new ArrayList<>();
-		StringBuilder sb = new StringBuilder("create table "+tablename+" ( `id` int(11) primary key not null auto_increment, `name` varchar(255), `description` varchar(255),");
+		StringBuilder sb = new StringBuilder("create table "+tablename+" ( `id` int(11) primary key not null auto_increment, `name` varchar(255), `description` varchar(255), `type` varchar(255),");
 		while (iterable.hasNext()){
 			OntClass subclass = iterable.next();
 			if (subclass != null && subclass.getLocalName() != null){

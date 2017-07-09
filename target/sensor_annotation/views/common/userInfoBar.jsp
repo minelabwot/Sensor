@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			      <li><a href="<%=basePath%>Anomaly_showAllAnomaly.do">设备异常查询</a></li>
 			      <li><a href="<%=basePath%>autoGenerator.do">设备自动控制</a></li>
 			      <li><a href="<%=basePath%>addOwl.do">添加本体</a></li>
-			      <li><a href="<%=basePath%>listowl.do">本体编辑</a></li>
+			      <li><a href="<%=basePath%>listOwl.do">本体编辑</a></li>
 					<li></li>
 			      <%--<li class="dropdown">--%>
 			        <%--<a class="dropdown-toggle" data-toggle="dropdown" href="#">分类--%>
@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					        </ul>
 					    </li>
 					    
-						<li><a href="<%=basePath%>userLogout.do">退出</a><li>
+						<li><a href="<%=basePath%>sensor_annotation/userLogout.do">退出</a><li>
 					</c:if>
 			    </ul>
 			  </div>

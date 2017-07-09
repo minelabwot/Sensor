@@ -14,9 +14,7 @@ import com.yyn.model.User;
 @Component
 public interface UserLoginDAO {
 	//新用户注册
-	@Insert("insert into user_information (name,password,authority,"
-			+ "phone,email) values (#{name},#{password},"
-			+ "#{authority},#{phone},#{email})")
+	@Insert("insert into user_information (name,password,email) values (#{name},#{password},#{email})")
 	int insertNewUser(User user);
 	
 	@Update("update user_information set password=#{pwd} where name=#{name}")

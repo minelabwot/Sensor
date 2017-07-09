@@ -19,6 +19,7 @@ import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
+import org.apache.jena.system.Txn;
 import org.apache.jena.tdb.TDB;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.update.UpdateExecutionFactory;
@@ -64,24 +65,7 @@ public class RDFReasoning {
 		ResultSetFormatter.out(rs);
 		qe.close();
 	}
-	public static Dataset getDataset(String fileName) {
-		File file = new File(TDBConfig.root);
-		if(!file.exists()) {
-			Dataset ds = TDBFactory.createDataset(file.getAbsolutePath());
-			Model model = ModelFactory.createDefaultModel();
-			ds.begin(ReadWrite.WRITE);
-			try {
-				FileManager.get().readModel(model, fileName);
-				ds.addNamedModel("http://www.semanticweb.org/yangyunong/ontologies/2016/7/WoT_domain#",model);
-				ds.commit();
-			} finally {
-				ds.end();
-			}
-			model.close();
-			ds.close();
-		}
-		return TDBFactory.createDataset(file.getAbsolutePath());
-	}
+
 
 	public static Dataset getDataset(List<MyOwl> owlList) {
 		File file = new File(TDBConfig.root);
@@ -94,7 +78,7 @@ public class RDFReasoning {
 					System.out.println(owl);
 					Model model = ModelFactory.createDefaultModel();
 					FileManager.get().readModel(model, owl.getRoot()+owl.getFile());
-					ds.addNamedModel("WoT_domain:sensor_annotation",model);
+					ds.addNamedModel(owl.getUri()+"sensor_annotation",model);
 					model.close();
 				}
 				ds.commit();
@@ -124,6 +108,7 @@ public class RDFReasoning {
 //		System.out.println(updateString);
 		UpdateRequest request = UpdateFactory.create(updateString) ;
 		UpdateProcessor proc = UpdateExecutionFactory.create(request, dataset) ;
+//		Txn.executeWrite(dataset,()->{});
 		proc.execute() ;
 	}
 
@@ -153,7 +138,7 @@ public class RDFReasoning {
 			for (MyOwl  owl:owlList){
 				FileOutputStream fos = new FileOutputStream(owl.getRoot()+"output.owl");
 				System.out.println(owl.getRoot()+"output.owl");
-				Model model = ds.getNamedModel(owl.getName());
+				Model model = ds.getNamedModel(owl.getUri()+"sensor_annotation");
 				model.getWriter().write(model, fos,null);
 				fos.close();
 			}
@@ -166,7 +151,7 @@ public class RDFReasoning {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		System.out.println("更新了output.owl");
+		System.out.println("更新了output.owl");
 	}
 
 	public static void output(Dataset ds){
@@ -185,6 +170,6 @@ public class RDFReasoning {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		System.out.println("更新了output.owl");
+		System.out.println("更新了output.owl");
 	}
 }
